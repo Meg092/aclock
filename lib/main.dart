@@ -1,6 +1,7 @@
 import 'package:audio_alarm/db_alarm/db_alarm.dart';
 import 'package:audio_alarm/pages/add_audio/add_audio_binding.dart';
 import 'package:audio_alarm/pages/add_audio/add_audio_view.dart';
+import 'package:audio_alarm/pages/add_audio/audio_trans.dart';
 import 'package:audio_alarm/pages/alarm_add/alarm_add_binding.dart';
 import 'package:audio_alarm/pages/alarm_add/alarm_add_view.dart';
 import 'package:audio_alarm/pages/alarm_first/alarm_first_binding.dart';
@@ -11,6 +12,8 @@ import 'package:audio_alarm/pages/alarm_tab/alarm_tab_binding.dart';
 import 'package:audio_alarm/pages/alarm_tab/alarm_tab_view.dart';
 import 'package:audio_alarm/pages/broken_page/broken_page_binding.dart';
 import 'package:audio_alarm/pages/broken_page/broken_page_view.dart';
+import 'package:audio_alarm/pages/manage_init/manage_init_binding.dart';
+import 'package:audio_alarm/pages/manage_init/manage_init_view.dart';
 import 'package:audio_alarm/pages/my_audio/my_audio_binding.dart';
 import 'package:audio_alarm/pages/my_audio/my_audio_view.dart';
 import 'package:audio_alarm/pages/remind_details/remind_details_binding.dart';
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: AFS,
-      initialRoute: AlarmNames.alarmTab,
+      initialRoute: AlarmNames.alarmInit,
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -92,10 +95,12 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> AFS = [
+  GetPage(name: AlarmNames.alarmInit, page: () => const ManageInitView(), binding: ManageInitBinding()),
   GetPage(name: AlarmNames.alarmAdd, page: () => AlarmAddPage(), binding: AlarmAddBinding()),
   GetPage(name: AlarmNames.alarmFirst, page: () => AlarmFirstPage(), binding: AlarmFirstBinding()),
   GetPage(name: AlarmNames.alarmSecond, page: () => AlarmSecondPage(), binding: AlarmSecondBinding()),
   GetPage(name: AlarmNames.alarmTab, page: () => AlarmTabPage(), binding: AlarmTabBinding()),
+  GetPage(name: AlarmNames.audioTrans, page: () => const AudioTrans()),
   GetPage(name: AlarmNames.brokenPage, page: () => const BrokenPageView(), binding: BrokenPageBinding()),
   GetPage(name: AlarmNames.addAudio, page: () => AddAudioPage(), binding: AddAudioBinding()),
   GetPage(name: AlarmNames.myAudio, page: () => MyAudioPage(), binding: MyAudioBinding()),

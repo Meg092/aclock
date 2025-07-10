@@ -11,7 +11,7 @@ class ManageInitView extends GetView<ManageInitLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.reilly.value
+          () => controller.watsica.value
               ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class ManageInitView extends GetView<ManageInitLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.mqzab();
+              controller.naeqz();
             },
             icon: const Icon(
               Icons.restart_alt,

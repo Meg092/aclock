@@ -13,7 +13,7 @@ class AlarmSecondPage extends GetView<AlarmSecondLogic> {
       height: 40,
       child: <Widget>[
         Text(titles[index]),
-        const Icon(
+        index == 2 ? const Text("v1.0.0").paddingOnly(right: 10) : const Icon(
           Icons.keyboard_arrow_right,
           size: 20,
           color: Colors.grey,
@@ -26,9 +26,6 @@ class AlarmSecondPage extends GetView<AlarmSecondLogic> {
           break;
         case 1:
           Get.toNamed(AlarmNames.myAudio);
-          break;
-        case 2:
-          controller.aboutAlarmUS(context);
           break;
       }
     });
